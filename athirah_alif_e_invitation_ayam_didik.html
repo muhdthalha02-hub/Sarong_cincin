@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jemputan Majlis Risik & Tunang | Athirah & Alif</title>
+<style>
+:root{--ivory:#fbf7ed;--cream:#f3ead8;--sage:#78856a;--sage2:#aab39a;--gold:#b88a42;--gold2:#d9bd83;--brown:#603b1b;--muted:#826548}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--brown);font-family:Georgia,'Times New Roman',serif}
+button,a{font:inherit}
+.hero{min-height:100vh;position:relative;display:grid;place-items:center;padding:32px 18px;overflow:hidden;background:radial-gradient(ellipse at center,#fffdf7 0%,var(--ivory) 58%,#e9dfca 100%)}
+.frame{width:min(920px,100%);position:relative;border:1px solid var(--gold);outline:1px solid #d8bd8370;outline-offset:6px;padding:clamp(26px,5vw,62px) clamp(18px,5vw,60px) 30px;text-align:center;background:#fffdf5c9;box-shadow:0 18px 60px #68451b12}
+.flowers{position:absolute;z-index:0;pointer-events:none;opacity:.88;width:clamp(150px,29vw,330px)}
+.flowers.tl{top:-8px;left:-8px}.flowers.tr{top:-8px;right:-8px;transform:scaleX(-1)}
+.flowers.bl{bottom:-8px;left:-8px;transform:scaleY(-1)}.flowers.br{bottom:-8px;right:-8px;transform:scale(-1)}
+.inner{position:relative;z-index:1}
+.eyebrow{text-transform:uppercase;letter-spacing:.25em;font-size:clamp(10px,1.6vw,14px);color:var(--sage);margin:0 0 14px}
+.script{font-family:'Brush Script MT','Segoe Script','Snell Roundhand',cursive;font-style:italic;font-weight:400}
+h1{font-size:clamp(54px,10vw,104px);line-height:1;margin:0;color:var(--brown);font-weight:400}
+h2{font-size:clamp(22px,4vw,38px);font-weight:400;margin:14px 0 12px}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:18px auto;color:var(--gold);font-size:25px}
+.rule:before,.rule:after{content:"";width:100px;max-width:22vw;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule:after{transform:scaleX(-1)}
+.names{font-size:clamp(43px,8vw,78px);margin:12px 0 14px}
+.intro{font-size:clamp(14px,2vw,18px);line-height:1.7;margin:0 auto;max-width:520px}
+.datebox{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;max-width:590px;margin:28px auto 22px}
+.datepart{letter-spacing:.16em;text-transform:uppercase;font-size:clamp(11px,1.8vw,16px);padding:12px 4px;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.datecenter{border-left:1px solid var(--gold);border-right:1px solid var(--gold);padding:0 25px}
+.month{letter-spacing:.18em;font-size:12px}.day{font-size:54px;line-height:1.05}.year{letter-spacing:.2em;font-size:14px}
+.venue{font-size:clamp(14px,2vw,18px);line-height:1.55;margin:10px auto;max-width:580px}
+.tagline{font-size:clamp(24px,4vw,38px);margin:24px 0 4px}
+.scroll{display:inline-block;margin-top:25px;padding:11px 22px;border:1px solid var(--gold);border-radius:30px;text-decoration:none;color:var(--brown);background:#fffaf0d9;transition:.2s}
+.scroll:hover{background:var(--gold);color:white}
+section.details{padding:70px 18px 78px;background:linear-gradient(180deg,#f0e7d6,#fbf7ed)}
+.section-inner{width:min(900px,100%);margin:auto}
+.section-title{text-align:center;font-size:clamp(34px,6vw,54px);margin:0 0 8px;font-weight:400}
+.section-sub{text-align:center;color:var(--muted);line-height:1.6;margin:0 auto 32px}
+.timeline{max-width:780px;margin:auto;display:grid;gap:14px}
+.event{display:grid;grid-template-columns:145px 1fr;gap:18px;padding:20px 22px;border:1px solid #c8ad7a75;border-radius:16px;background:#fffdf4d9;box-shadow:0 5px 18px #5c3c1609}
+.time{font-size:14px;letter-spacing:.04em;color:#7c673f;font-weight:bold;padding-top:3px}
+.event h3{font-size:19px;margin:0 0 8px;font-weight:600}
+.event ul{margin:0;padding-left:19px;line-height:1.65;color:#725536;font-size:15px}
+.event p{margin:0;line-height:1.6;color:#725536;font-size:15px}
+.music{margin:34px auto 0;max-width:780px;border:1px solid var(--gold);border-radius:18px;background:#fffaf0;padding:24px;text-align:center}
+.music-btn{display:inline-block;border:1px solid var(--gold);border-radius:30px;padding:12px 24px;background:var(--sage);color:#fffdf5;cursor:pointer;transition:.2s}
+.music-btn:hover{background:var(--brown)}
+.youtube-wrap{width:min(360px,100%);margin:18px auto 0;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#e9dfca}
+.youtube-wrap iframe{width:100%;height:100%;border:0;display:block}
+.music .note{font-size:32px;color:var(--gold)}
+.music h3{font-size:22px;margin:8px 0}
+.music p{color:var(--muted);line-height:1.6;margin:0 0 16px}
+audio{width:min(440px,100%);accent-color:var(--sage)}
+.small{font-size:12px;color:#89775d;margin-top:10px}
+footer{text-align:center;padding:26px 15px 32px;font-size:13px;letter-spacing:.08em;color:var(--sage);background:var(--ivory)}
+@media(max-width:560px){.frame{padding:38px 15px 26px}.flowers{width:35vw;opacity:.65}.datebox{gap:8px}.datecenter{padding:0 12px}.day{font-size:43px}.event{grid-template-columns:1fr;gap:8px;padding:17px}.time{font-size:13px}.event h3{font-size:18px}section.details{padding-top:55px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="hero" id="jemputan">
+<svg class="flowers tl" viewBox="0 0 300 310" aria-hidden="true">
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 10 Q70 70 80 145 T150 285" fill="none" stroke="#a8874f" stroke-width="2"/>
+  <path d="M42 45 Q5 32 10 8 Q45 8 42 45Z" fill="#78856a"/><path d="M62 83 Q95 45 125 66 Q105 100 62 83Z" fill="#c9b995"/>
+  <path d="M77 126 Q35 112 37 83 Q73 92 77 126Z" fill="#89977b"/><path d="M105 173 Q144 136 166 160 Q145 190 105 173Z" fill="#d7c6a4"/>
+  <path d="M123 220 Q80 204 87 177 Q120 188 123 220Z" fill="#78856a"/><path d="M145 257 Q183 229 204 253 Q181 281 145 257Z" fill="#b7a27b"/>
+  <path d="M28 24 Q60 45 79 67 M61 69 Q87 90 94 111 M97 145 Q127 157 139 185" fill="none" stroke="#b88a42" stroke-width="1.5"/>
+  <g fill="#b88a42"><circle cx="24" cy="26" r="5"/><circle cx="14" cy="39" r="4"/><circle cx="38" cy="43" r="4"/><circle cx="51" cy="31" r="3"/></g>
+  <g transform="translate(145 55)" stroke="#b88a42" stroke-width="1.5" fill="#fff8e9"><ellipse cx="0" cy="-13" rx="7" ry="13"/><ellipse cx="12" cy="-3" rx="7" ry="13" transform="rotate(55 12 -3)"/><ellipse cx="7" cy="12" rx="7" ry="13" transform="rotate(120 7 12)"/><ellipse cx="-8" cy="10" rx="7" ry="13" transform="rotate(200 -8 10)"/><ellipse cx="-13" cy="-4" rx="7" ry="13" transform="rotate(300 -13 -4)"/><circle r="5" fill="#d6ad64"/></g>
+ </g></svg>
+<svg class="flowers tr" viewBox="0 0 300 310" aria-hidden="true"><use href="#unused"/></svg>
+<svg class="flowers bl" viewBox="0 0 300 310" aria-hidden="true"><g fill="none" stroke="#b88a42" stroke-width="2"><path d="M15 10 Q70 70 80 145 T150 285"/></g><g fill="#89977b" stroke="#6f795f"><path d="M42 45 Q5 32 10 8 Q45 8 42 45Z"/><path d="M77 126 Q35 112 37 83 Q73 92 77 126Z"/><path d="M123 220 Q80 204 87 177 Q120 188 123 220Z"/></g><g fill="#fff8e9" stroke="#b88a42" stroke-width="1.5"><circle cx="70" cy="60" r="9"/><circle cx="61" cy="52" r="7"/><circle cx="79" cy="52" r="7"/><circle cx="61" cy="68" r="7"/><circle cx="79" cy="68" r="7"/></g></svg>
+<svg class="flowers br" viewBox="0 0 300 310" aria-hidden="true"><g fill="none" stroke="#b88a42" stroke-width="2"><path d="M15 10 Q70 70 80 145 T150 285"/></g><g fill="#c9b995" stroke="#a89a78"><path d="M62 83 Q95 45 125 66 Q105 100 62 83Z"/><path d="M105 173 Q144 136 166 160 Q145 190 105 173Z"/><path d="M145 257 Q183 229 204 253 Q181 281 145 257Z"/></g><g fill="#89977b" stroke="#6f795f"><path d="M42 45 Q5 32 10 8 Q45 8 42 45Z"/><path d="M77 126 Q35 112 37 83 Q73 92 77 126Z"/></g><g fill="#b88a42"><circle cx="24" cy="26" r="5"/><circle cx="14" cy="39" r="4"/><circle cx="38" cy="43" r="4"/></g></svg>
+<div class="frame"><div class="inner">
+<p class="eyebrow">Dengan penuh kesyukuran</p>
+<h1 class="script">Sarong Cincin</h1>
+<h2>Risik dan Tunang</h2>
+<div class="rule">♡</div>
+<div class="names script">Athirah <span style="color:var(--gold)">&amp;</span> Alif</div>
+<p class="intro">Dengan setulus hati, kami menjemput tuan/puan<br>untuk meraikan hari istimewa kami.</p>
+<div class="datebox">
+<div class="datepart">Sabtu</div>
+<div class="datecenter"><div class="month">November</div><div class="day">21</div><div class="year">2026</div></div>
+<div class="datepart">8.00 malam</div>
+</div>
+<p class="venue">⌖ &nbsp; Sky Garden, 3 Towers Jalan Ampang,<br>Wilayah Persekutuan Kuala Lumpur</p>
+<div class="tagline script">Seindah Kasih Setulus Hati yang Terpatri</div>
+<div class="rule">❧</div>
+<a class="scroll" href="#tentatif">Lihat Tentatif Majlis ↓</a>
+</div></div>
+</main>
+<section class="details" id="tentatif">
+<div class="section-inner">
+<h2 class="section-title script">Tentatif Majlis</h2>
+<p class="section-sub">Majlis Risik &amp; Pertunangan Athirah dan Alif</p>
+<div class="timeline">
+<article class="event"><div class="time">8.00 – 8.15 malam</div><div><h3>Ketibaan Tetamu dan Keluarga</h3><ul><li>Ketibaan tetamu dan ahli keluarga kedua-dua belah pihak.</li><li>Ketibaan rombongan pihak lelaki dan sesi menyambut rombongan oleh pihak perempuan.</li></ul></div></article>
+<article class="event"><div class="time">8.15 – 9.15 malam</div><div><h3>Majlis Pertunangan</h3><ul><li>Kata alu-aluan dan pembukaan majlis.</li><li>Ucapan wakil keluarga pihak lelaki bagi menyampaikan hajat pertunangan.</li><li>Ucapan balas daripada wakil keluarga pihak perempuan.</li><li>Perbincangan dan persetujuan antara kedua-dua belah pihak.</li><li>Penetapan tempoh pertunangan dan cadangan tarikh pernikahan.</li><li>Penyerahan hantaran pertunangan, jika berkenaan.</li></ul></div></article>
+<article class="event"><div class="time">9.15 – 9.30 malam</div><div><h3>Bacaan Doa Selamat</h3><p>Bacaan doa bagi memohon keberkatan serta kelancaran urusan kedua-dua keluarga.</p></div></article>
+<article class="event"><div class="time">9.30 – 9.40 malam</div><div><h3>Upacara Menyarung Cincin Pertunangan</h3><ul><li>Persediaan cincin pertunangan.</li><li>Upacara menyarung cincin kepada bakal tunang.</li><li>Sesi bergambar ringkas selepas upacara.</li></ul></div></article>
+<article class="event"><div class="time">9.40 – 11.00 malam</div><div><h3>Jamuan Makan dan Sesi Fotografi</h3><ul><li>Jamuan makan untuk tetamu dan keluarga.</li><li>Sesi fotografi pasangan bersama keluarga kedua-dua belah pihak.</li><li>Sesi fotografi bersama saudara-mara dan tetamu.</li><li>Sesi beramah mesra antara kedua-dua keluarga.</li></ul></div></article>
+<article class="event"><div class="time">11.00 malam</div><div><h3>Majlis Bersurai</h3><p>Ucapan penghargaan dan terima kasih kepada semua tetamu atas kehadiran.</p></div></article>
+</div>
+<div class="music" id="muzik">
+<div class="note">♫</div>
+<h3>Irama Tradisi untuk Hari Istimewa</h3>
+<p><strong>Ayam Didik</strong><br>Instrumental · YouTube</p>
+<button class="music-btn" id="playMusic" type="button">▶ Mainkan Ayam Didik</button>
+<div class="youtube-wrap" id="youtubeWrap" hidden>
+  <iframe id="youtubePlayer" title="Ayam Didik instrumental" src="about:blank" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div class="small" id="musicStatus">Tekan butang untuk memainkan lagu. Lagu akan dimainkan melalui video YouTube yang kau pilih.</div>
+</div>
+<script>
+(function(){
+  const button = document.getElementById('playMusic');
+  const wrap = document.getElementById('youtubeWrap');
+  const player = document.getElementById('youtubePlayer');
+  const status = document.getElementById('musicStatus');
+  const videoId = '8f-c5Hwrc_4';
+  let playing = false;
+  button.addEventListener('click', function(){
+    if (!playing) {
+      wrap.hidden = false;
+      player.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&playsinline=1&rel=0';
+      button.textContent = '↻ Buka Semula Lagu';
+      status.textContent = 'Jika lagu tidak bermula, tekan Play pada pemain YouTube di bawah.';
+      playing = true;
+    } else {
+      player.src = 'about:blank';
+      wrap.hidden = true;
+      button.textContent = '▶ Mainkan Ayam Didik';
+      status.textContent = 'Tekan butang untuk memainkan lagu.';
+      playing = false;
+    }
+  });
+})();
+</script>
+</div>
+</section>
+<footer>Dengan kasih dan doa · Athirah &amp; Alif · 21.11.2026</footer>
+</body>
+</html>
